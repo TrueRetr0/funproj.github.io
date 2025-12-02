@@ -1,0 +1,472 @@
+.pricing-container {
+    max-width: 1600px;
+    margin: 0 auto 6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 0 1rem;
+}
+
+.tier-card {
+    padding: 4.5rem 2rem 3rem;
+    position: relative;
+    transition: all 0.4s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    overflow: visible;
+}
+
+.tier-card.featured {
+    transform: scale(1.05);
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+}
+
+.tier-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.tier-badge {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.6rem 2.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+    z-index: 10;
+}
+
+.green-badge {
+    background: linear-gradient(135deg, #00ff88, #00cc6a);
+    color: var(--black);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+}
+
+.purple-badge {
+    background: linear-gradient(135deg, #b366ff, #9933ff);
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(179, 102, 255, 0.6);
+}
+
+.gold-badge {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--black);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+.featured-banner,
+.value-banner {
+    position: absolute;
+    top: 35px;
+    right: -45px;
+    background: linear-gradient(135deg, #b366ff, #9933ff);
+    color: #ffffff;
+    padding: 0.6rem 3.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 25px rgba(179, 102, 255, 0.6);
+    z-index: 5;
+}
+
+.value-banner {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--black);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+.tier-header {
+    margin: 3rem 0 2rem;
+    text-align: center;
+}
+
+.tier-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.tier-desc {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tier-price {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tier-price .price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--cyan), #0088ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tier-price .period {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.basic-tier {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.08), rgba(0, 204, 106, 0.05));
+    border: 2px solid rgba(0, 255, 136, 0.4);
+}
+
+.basic-tier:hover {
+    border-color: #00ff88;
+    box-shadow: 0 20px 80px rgba(0, 255, 136, 0.4);
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.12), rgba(0, 204, 106, 0.08));
+}
+
+.plus-tier {
+    background: linear-gradient(135deg, rgba(179, 102, 255, 0.08), rgba(153, 51, 255, 0.05));
+    border: 2px solid rgba(179, 102, 255, 0.4);
+}
+
+.plus-tier:hover {
+    border-color: #b366ff;
+    box-shadow: 0 20px 80px rgba(179, 102, 255, 0.4);
+    background: linear-gradient(135deg, rgba(179, 102, 255, 0.12), rgba(153, 51, 255, 0.08));
+}
+
+.lifetime-tier {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 237, 78, 0.05));
+    border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+.lifetime-tier:hover {
+    border-color: #ffd700;
+    box-shadow: 0 20px 80px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 237, 78, 0.08));
+}
+
+.tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tier-features li {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.tier-features li:last-child {
+    border-bottom: none;
+}
+
+.tier-features li span {
+    color: var(--cyan);
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.payment-section {
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    text-align: center;
+}
+
+.section-title-alt {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    background: linear-gradient(135deg, var(--cyan), #0088ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 3rem;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.payment-option {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(0, 136, 255, 0.05));
+    border: 2px solid rgba(0, 240, 255, 0.2);
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.payment-option:hover {
+    border-color: var(--cyan);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 50px rgba(0, 240, 255, 0.3);
+}
+
+.payment-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    border: 2px solid;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.cashapp {
+    color: #00d64f;
+    border-color: #00d64f;
+    box-shadow: 0 0 20px rgba(0, 214, 79, 0.3);
+}
+
+.paypal {
+    color: #0070ba;
+    border-color: #0070ba;
+    box-shadow: 0 0 20px rgba(0, 112, 186, 0.3);
+}
+
+.crypto {
+    color: #f7931a;
+    border-color: #f7931a;
+    box-shadow: 0 0 20px rgba(247, 147, 26, 0.3);
+}
+
+.payment-option:hover .payment-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.payment-option h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.payment-option p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.upgrade-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.upgrade-content {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(0, 136, 255, 0.1));
+    border: 2px solid var(--cyan);
+    padding: 4rem 3rem;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    box-shadow: 0 0 60px var(--cyan-glow);
+    transition: all 0.4s ease;
+}
+
+.upgrade-content:hover {
+    box-shadow: 0 0 100px var(--cyan);
+}
+
+.upgrade-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 20px var(--cyan));
+}
+
+.upgrade-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--cyan);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 30px var(--cyan-glow);
+}
+
+.upgrade-content p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+}
+
+.upgrade-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 3rem;
+    background: var(--cyan);
+    color: var(--black);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: none;
+    transition: all 0.4s ease;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    box-shadow: 0 0 40px var(--cyan-glow);
+}
+
+.upgrade-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+.upgrade-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #ffffff;
+    box-shadow: 0 10px 60px var(--cyan);
+}
+
+@media (max-width: 1200px) {
+    .pricing-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        padding: 0 2rem;
+    }
+
+    .tier-card.featured {
+        transform: scale(1);
+    }
+
+    .tier-card.featured:hover {
+        transform: translateY(-10px);
+    }
+
+    .payment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-banner,
+    .value-banner {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .tier-header h2 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .tier-price .price {
+        font-size: 2.5rem;
+    }
+
+    .section-title-alt {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .upgrade-content h2 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    .upgrade-content {
+        padding: 3rem 2rem;
+    }
+
+    .upgrade-content p {
+        font-size: 1rem;
+    }
+
+    .tier-features li {
+        font-size: 1rem;
+    }
+
+    .payment-option {
+        padding: 2rem 1.5rem;
+    }
+
+    .payment-option h3 {
+        font-size: 1.1rem;
+    }
+
+    .tier-card {
+        padding: 3rem 1.5rem 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tier-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .tier-desc {
+        font-size: 0.9rem;
+    }
+
+    .tier-price .price {
+        font-size: 2rem;
+    }
+
+    .tier-badge {
+        font-size: 0.65rem;
+        padding: 0.5rem 2rem;
+    }
+
+    .section-title-alt {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .upgrade-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .upgrade-content {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .upgrade-button {
+        font-size: 0.9rem;
+        padding: 1.2rem 2rem;
+    }
+
+    .tier-features li {
+        font-size: 0.95rem;
+    }
+
+    .payment-option h3 {
+        font-size: 1rem;
+    }
+
+    .payment-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
