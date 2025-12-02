@@ -1,8 +1,10 @@
 .page-container {
     min-height: 100vh;
-    padding: 120px 2rem 4rem;
+    padding: 120px 1rem 4rem;
     position: relative;
     z-index: 2;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .page-header {
@@ -168,6 +170,8 @@
     clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
     box-shadow: 0 0 40px var(--cyan-glow);
     margin-bottom: 1.5rem;
+    text-align: center;
+    display: block;
 }
 
 .download-button:hover {
@@ -402,80 +406,159 @@
 }
 
 @media (max-width: 768px) {
+    .page-container {
+        padding: 100px 0.5rem 2rem;
+    }
+
+    .page-header {
+        margin-bottom: 3rem;
+        padding: 0 0.5rem;
+    }
+
     .page-title {
-        font-size: 3rem;
-        letter-spacing: 6px;
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+        word-break: break-word;
     }
 
     .page-subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .title-line {
+        width: 200px;
+    }
+
+    .download-layout {
+        padding: 0 0.5rem;
+    }
+
+    .coming-soon-wrapper {
+        padding: 0 0.5rem;
     }
 
     .coming-soon-box {
-        padding: 3rem 2rem;
+        padding: 2rem 1rem;
     }
 
     .coming-soon-box h1 {
-        font-size: 2.5rem;
-        letter-spacing: 5px;
+        font-size: 2rem;
+        letter-spacing: 3px;
     }
 
     .coming-soon-text {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .coming-soon-subtext {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .platform-selector,
     .status-card,
     .system-info-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .selector-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .status-card h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .download-button {
-        font-size: 1rem;
-        padding: 1.2rem 2rem;
+        font-size: 0.9rem;
+        padding: 1.1rem 1.5rem;
+    }
+
+    .platform-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .info-row {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .page-container {
-        padding: 100px 1rem 2rem;
+        padding: 90px 0.5rem 2rem;
+    }
+
+    .page-header {
+        margin-bottom: 2rem;
     }
 
     .page-title {
-        font-size: 2rem;
-        letter-spacing: 4px;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
     }
 
     .page-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    .title-line {
+        width: 150px;
+    }
+
+    .coming-soon-box {
+        padding: 1.5rem 0.75rem;
     }
 
     .coming-soon-box h1 {
-        font-size: 1.8rem;
-        letter-spacing: 3px;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .coming-soon-text {
+        font-size: 0.9rem;
+    }
+
+    .coming-soon-subtext {
+        font-size: 0.8rem;
     }
 
     .key-icon-large {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .coming-soon-button,
     .download-button {
-        font-size: 0.9rem;
-        padding: 1rem 1.5rem;
+        font-size: 0.8rem;
+        padding: 0.9rem 1.2rem;
+    }
+
+    .platform-selector,
+    .status-card,
+    .system-info-card {
+        padding: 1.2rem 0.75rem;
+    }
+
+    .selector-title {
+        font-size: 1rem;
+    }
+
+    .status-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .status-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .platform-card {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .platform-icon {
+        width: 40px;
+        height: 40px;
     }
 }

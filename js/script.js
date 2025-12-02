@@ -6,6 +6,8 @@ const gridCtx = gridCanvas.getContext('2d');
 let particles = [];
 let mouseX = 0;
 let mouseY = 0;
+const isMobile = window.innerWidth <= 768;
+const particleCount = isMobile ? 30 : 100;
 
 function resizeCanvas() {
     particleCanvas.width = window.innerWidth;
@@ -70,7 +72,7 @@ class Particle {
     }
 }
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());
 }
 
@@ -99,7 +101,7 @@ let gridOffset = 0;
 function drawGrid() {
     gridCtx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
 
-    const gridSize = 40;
+    const gridSize = isMobile ? 60 : 40;
     const scrollOffset = window.pageYOffset * 0.3;
 
     gridCtx.strokeStyle = 'rgba(0, 240, 255, 0.1)';
