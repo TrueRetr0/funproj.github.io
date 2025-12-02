@@ -14,6 +14,7 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
@@ -21,9 +22,11 @@ body {
     background: var(--black);
     color: #ffffff;
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
     min-width: 320px;
     max-width: 100vw;
+    min-height: 100vh;
 }
 
 #particleCanvas,
@@ -669,6 +672,19 @@ body {
         font-size: 0.6rem;
         letter-spacing: 0.5px;
         padding: 0.3rem 0.4rem;
+        overflow: visible;
+    }
+
+    .nav-item::before {
+        display: none;
+    }
+
+    .nav-item:hover {
+        color: var(--cyan);
+    }
+
+    .nav-item.active {
+        color: var(--cyan);
     }
 
     .logo-nav {
@@ -688,11 +704,16 @@ body {
 
     .hero-container {
         min-height: 100vh;
-        padding: 6rem 0 2rem;
+        padding: 6rem 0 4rem;
     }
 
     .hero-content-wrapper {
         padding: 1rem 0.5rem;
+    }
+
+    .features-section,
+    .discord-section {
+        min-height: 40vh;
     }
 
     .glitch-text {

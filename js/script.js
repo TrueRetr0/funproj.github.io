@@ -151,10 +151,10 @@ const revealElements = document.querySelectorAll('.reveal');
 
 function reveal() {
     const windowHeight = window.innerHeight;
+    const revealPoint = isMobile ? 50 : 100;
 
     revealElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
-        const revealPoint = 100;
 
         if (elementTop < windowHeight - revealPoint) {
             element.classList.add('active');
@@ -163,7 +163,23 @@ function reveal() {
 }
 
 window.addEventListener('scroll', reveal);
-reveal();
+
+if (isMobile) {
+    document.addEventListener('DOMContentLoaded', () => {
+        reveal();
+        setTimeout(() => {
+            const contentHeight = Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight,
+                window.innerHeight * 3
+            );
+            document.body.style.minHeight = `${contentHeight}px`;
+            reveal();
+        }, 50);
+    });
+} else {
+    reveal();
+}
 
 const navLinks = document.querySelectorAll('.nav-item');
 navLinks.forEach(link => {
